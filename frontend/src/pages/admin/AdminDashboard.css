@@ -1,0 +1,308 @@
+/* ===========================
+   Admin Layout
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+.admin-container{
+    display:flex;
+    min-height:100vh;
+    background:#f5f7fb;
+}
+
+/* ===========================
+   Sidebar
+=========================== */
+
+.sidebar{
+    width:260px;
+    background:#111827;
+    color:#fff;
+    padding:30px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.logo{
+    margin-bottom:40px;
+}
+
+.logo h2{
+    font-size:30px;
+    color:#3b82f6;
+}
+
+.logo span{
+    color:#9ca3af;
+    font-size:14px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+    font-size:17px;
+}
+
+.sidebar ul li:hover{
+    background:#2563eb;
+}
+
+.sidebar ul li.active{
+    background:#2563eb;
+}
+
+.sidebar ul li svg{
+    font-size:20px;
+}
+
+.logout-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:15px;
+    border:none;
+    background:#ef4444;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.logout-btn:hover{
+    background:#dc2626;
+}
+
+/* ===========================
+   Dashboard
+=========================== */
+
+.dashboard{
+    flex:1;
+    padding:35px;
+}
+
+/* Header */
+
+.dashboard-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.dashboard-header h1{
+    font-size:36px;
+    color:#111827;
+}
+
+.dashboard-header p{
+    color:#6b7280;
+    margin-top:8px;
+}
+
+.menu-btn{
+    display:none;
+    border:none;
+    background:#2563eb;
+    color:white;
+    padding:12px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.card{
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card-icon{
+    font-size:42px;
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.card h2{
+    font-size:30px;
+}
+
+.revenue{
+    background:linear-gradient(135deg,#10b981,#059669);
+}
+
+.orders{
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+}
+
+.products{
+    background:linear-gradient(135deg,#8b5cf6,#7c3aed);
+}
+
+.users{
+    background:linear-gradient(135deg,#f97316,#ea580c);
+}
+
+/* ===========================
+   Dashboard Sections
+=========================== */
+
+.dashboard-sections{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+}
+
+.section-box{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.section-box h2{
+    margin-bottom:20px;
+    color:#111827;
+}
+
+.placeholder{
+    height:300px;
+    border:2px dashed #d1d5db;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    color:#9ca3af;
+    background:#f9fafb;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:1000px){
+
+.dashboard-sections{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:900px){
+
+.sidebar{
+    width:80px;
+}
+
+.logo h2,
+.logo span{
+    display:none;
+}
+
+.sidebar ul li{
+    justify-content:center;
+    padding:16px;
+}
+
+.sidebar ul li span{
+    display:none;
+}
+
+.logout-btn{
+    padding:14px;
+    font-size:0;
+}
+
+.logout-btn svg{
+    font-size:20px;
+}
+
+}
+
+@media(max-width:768px){
+
+.admin-container{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+    flex-direction:row;
+    align-items:center;
+    overflow-x:auto;
+    padding:15px;
+}
+
+.sidebar ul{
+    display:flex;
+    gap:10px;
+}
+
+.sidebar ul li{
+    margin-bottom:0;
+}
+
+.dashboard{
+    padding:20px;
+}
+
+.dashboard-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.dashboard-header h1{
+    font-size:28px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.placeholder{
+    height:220px;
+}
+
+}
